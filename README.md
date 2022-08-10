@@ -93,14 +93,14 @@ Nothing fancy, just build the same demo svelte app for production and make it ap
 -   index.xxxx.js
 -   svelte.xxxx.svg
 
-5. Then paste the two lines from the `dist/index.html` into the head of your `mainrepo/index.html`
+5. Then paste the two lines from the `dist/index.html` into the head of your `mainrepo/www/index.html`
 
 ```html
 <script type="module" crossorigin src="/assets-svelte/index.xxxx.js"></script>
 <link rel="stylesheet" href="/assets-svelte/index.xxxx.css" />
 ```
 
-6. And paste the target div into your `mainrep/index.html` where you want the demo svelte app to appear. By default the svelte app bundle creates an app which immediately attaches to a div with id `app`
+6. And paste the target div into your `mainrep/www/index.html` where you want the demo svelte app to appear. By default the svelte app bundle creates an app which immediately attaches to a div with id `app` on page load
 
 ```html
 <div id="app"></div>
@@ -108,6 +108,11 @@ Nothing fancy, just build the same demo svelte app for production and make it ap
 
 7. See next section if you want to have more control over when and where the svelte app appears
 
-## Step 3.b - embed the demo svelte app dynamically, and into a div with any id
+## Step 3.b - embed the demo svelte app dynamically, with optional props, and into a div with any id
 
-TODO
+Embedding a svelte app to appear in one div immediately is usually fine. But there are other scenarios where you might like more control, like:
+
+-   you just want to make a LITTLE bit of your app reactive because most of it works fine being server-rendered
+-   or you want multiple little bits of your app to be reactive
+-   or you want to add a fancy interface to appear only when you click a button in one or multiple places based on the same svelte app
+-   or be able to server-render a list of companies as json in your html markup, for the svelte app to consume when it starts
