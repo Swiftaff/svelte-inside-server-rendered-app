@@ -8,12 +8,16 @@
 
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="stylesheet" href="/global.css" />
-        <link rel="stylesheet" href="/bundle.css" />
-        <script src="/bundle.js"></script>
+        <!--link rel="stylesheet" href="/bundle.css" /-->
+        <!--script src="/bundle.js"></script-->
+
+        <script type="module" crossorigin src="/assets/index.f1827a1d.js"></script>
+        <link rel="stylesheet" href="/assets/index.3635012e.css" />
     </head>
 
     <body>
         <h1>Example Static Page</h1>
+        <div id="app"></div>
         <table>
             <tr>
                 <td><div id="A"></div></td>
@@ -30,6 +34,7 @@
             app(document.getElementById("A"), propsA);
             app(document.getElementById("B"), propsB);
             app(document.getElementById("C"), propsC);
+            /*
             function init() {
                 let clicky = document.getElementById("clicky");
                 clicky.addEventListener("click", addnew);
@@ -45,6 +50,7 @@
                 app(document.getElementById("D"), propsD);
             }
             init();
+            */
         </script>
     </body>
 </html>
