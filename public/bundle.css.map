@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n    export let name;\n    let counter = 0;\n    let incr = () => counter++;\n</script>\n\n<main>\n    <h1>Hello {name}!</h1>\n    <p>Visit the <a href=\"https://svelte.dev/tutorial\">Svelte tutorial</a> to learn how to build Svelte apps.</p>\n    <div on:click={incr}>Counter:{counter}</div>\n</main>\n\n<style>\n    div {\n        user-select: none;\n        cursor: pointer;\n        background-color: pink;\n        width: 100px;\n        height: 40px;\n        padding-top: 15px;\n        margin-left: calc((100% - 100px) / 2);\n        border-radius: 5px;\n    }\n    main {\n        text-align: center;\n        padding: 1em;\n        max-width: 240px;\n        margin: 0 auto;\n    }\n\n    h1 {\n        color: #ff3e00;\n        text-transform: uppercase;\n        font-size: 4em;\n        font-weight: 100;\n    }\n\n    @media (min-width: 640px) {\n        main {\n            max-width: none;\n        }\n    }\n</style>\n"
+  ],
+  "names": [],
+  "mappings": "AAaI,GAAG,eAAC,CAAC,AACD,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,OAAO,CACf,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,KAAK,CAAC,IAAI,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CACrC,aAAa,CAAE,GAAG,AACtB,CAAC,AACD,IAAI,eAAC,CAAC,AACF,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,AAClB,CAAC,AAED,EAAE,eAAC,CAAC,AACA,KAAK,CAAE,OAAO,CACd,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,GAAG,CACd,WAAW,CAAE,GAAG,AACpB,CAAC,AAED,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AACvB,IAAI,eAAC,CAAC,AACF,SAAS,CAAE,IAAI,AACnB,CAAC,AACL,CAAC"
+}
