@@ -52,5 +52,25 @@
             init();
             */
         </script>
+
+        <!-- note: different id -->
+        <div id="dynamicSvelteApp"></div>
+        <script type="module" src="/src/main.js"></script>
+
+        <!-- whatever trigger you want, e.g. a button -->
+        <button id="button">attach svelte app to #dynamicSvelteApp div above</button>
+        <script>
+            let button = document.getElementById("button");
+            button.addEventListener("click", attachSvelteApp);
+
+            function attachSvelteApp() {
+                // calls the svelte 'app' with the target of the div to attach to
+                let target = document.getElementById("dynamicSvelteApp");
+                let testy = new App({
+                    target: document.getElementById("dynamicSvelteApp"),
+                });
+                //app(target);
+            }
+        </script>
     </body>
 </html>
