@@ -43,8 +43,11 @@ const mimeTypes = {
 
 function getFilePath(request) {
     let filePath = `.${request.url}`;
+    console.log(filePath);
     if (filePath === "./") {
         filePath = `./${root}index.html`;
+    } else if (filePath.length > 2 && filePath[2] != "w") {
+        filePath = root + filePath.substring(2, filePath.length);
     }
     return filePath;
 }
@@ -89,4 +92,4 @@ http.createServer((request, response) => {
     fs.readFile(filePath, (error, content) => handleFile(filePath, response, error, content));
 }).listen(port);
 
-console.log(`Server running at http://127.0.0.1:${port}/\r\n`);
+console.log(`Server running at http://127.0.0.1:${port}/\r\n`);

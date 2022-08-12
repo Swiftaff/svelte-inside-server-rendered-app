@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+        <title>Example Server-rendered App</title>
+
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" href="/global.css" />
+
+        <script src="/svelte_bundles/dynamic_attach/bundle.js"></script>
+        <link rel="stylesheet" href="/svelte_bundles/dynamic_attach/bundle.css" />
+    </head>
+
+    <body>
+        <h1>Example Server-rendered App</h1>
+        <div id="app"></div>
+        <!--
+        <table>
+            <tr>
+                <td><div id="A"></div></td>
+                <td><div id="B"></div></td>
+                <td><div id="C"></div></td>
+                <td id="td"><a id="clicky">click this to add a new svelte app here</a></td>
+            </tr>
+        </table>
+
+        <script defer>
+            let propsA = { name: "world A" };
+            let propsB = { name: "world B" };
+            let propsC = { name: "world C" };
+            app(document.getElementById("A"), propsA);
+            app(document.getElementById("B"), propsB);
+            app(document.getElementById("C"), propsC);
+            /*
+            function init() {
+                let clicky = document.getElementById("clicky");
+                clicky.addEventListener("click", addnew);
+                console.log("init", clicky);
+            }
+            function addnew() {
+                console.log("click", clicky);
+                let newdiv = document.createElement("div");
+                newdiv.id = "D";
+                let td = document.getElementById("td");
+                td.appendChild(newdiv);
+                let propsD = { name: "world D" };
+                app(document.getElementById("D"), propsD);
+            }
+            init();
+            */
+        </script>
+
+
+        <div id="dynamicSvelteApp"></div>
+        <script type="module" src="/src/main.js"></script>
+
+        <button id="button">attach svelte app to #dynamicSvelteApp div above</button>
+        <script>
+            let button = document.getElementById("button");
+            button.addEventListener("click", attachSvelteApp);
+
+            function attachSvelteApp() {
+                // calls the svelte 'app' with the target of the div to attach to
+                let target = document.getElementById("dynamicSvelteApp");
+                let testy = new App({
+                    target: document.getElementById("dynamicSvelteApp"),
+                });
+                //app(target);
+            }
+        </script>
+    --></body>
+</html>
