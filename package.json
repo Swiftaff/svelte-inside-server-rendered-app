@@ -1,5 +1,5 @@
 {
-  "name": "pretend-server-rendered-app",
+  "name": "svelte-inside-server-rendered-app",
   "version": "1.0.0",
   "scripts": {
     "www": "node www"

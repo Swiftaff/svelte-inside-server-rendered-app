@@ -1,5 +1,7 @@
 # Embedding svelte within an existing server-rendered app
 
+Just some notes and instructions on how to use Svelte in an existing app, rather than greenfield or Sveltekit.
+
 Why? Maybe you just want to make a LITTLE bit of your server-rendered app reactive because most of it works fine as is, but trying to make a modern front-end interface using imperitive JavaScript or jQuery is turning into unmaintainable spaghetti code (finding divs by ID, parsing text values and updating the dom manually based on click events).
 
 Svelte (and Vue and React etc) allow you to write clean logic, organised into sub-components, where the interface AUTOMATICALLY updates based on your data models.
@@ -128,7 +130,7 @@ const prod = {
         sourcemap: true,
         format: "iife",
         name: "app",
-        file: "H:/Development/temp-svelte-project/www/svelte_bundles/default/bundle.js",
+        file: "<path-to-mainrepo>/mainrepo/www/svelte_bundles/default/bundle.js",
     },
     plugins: [
         svelte(),
