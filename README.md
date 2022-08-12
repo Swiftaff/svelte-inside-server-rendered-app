@@ -13,26 +13,38 @@ However, the svelte config and build process can be frustrating to learn - see b
    |_ www/                  // webroot - local webserver runs from here
    |  |_ index.html         // your main homepage
    |  |_ assets/            // some assets
-   |     |_ images/
    |     ...
    |  |_ otherpages.html    // other pages etc
    |  ...
    |_ src/                  // maybe the src of your mainrepo
 ```
 
-## Step 2 - install svelte and vite into a subfolder
+The root of this repo pretends to be a server-rendered app. It has a basic webserver in it with html pages to demonstrate various ways of embedding svelte apps.
 
-Follow instructions here: `https://svelte.dev/` to install svelte and vite in a subfolder `mainrepo/src-svelte/` e.g.
+Install node (including npm) `https://nodejs.org/en/download/`.
+Then run this command to start the webserver at http://127.0.0.1:12345
+
+```
+node www
+```
+
+## Step 2 - install svelte into a subfolder
+
+Assuming you want to keep the Svelte source alongside your server-rendered-app source.
+
+We won't follow instructions here: `https://svelte.dev/` as that installs svelte and vite which is not quite ready to use at end 2022.
+Instead we'll just use Svelte and Rollup which is fine for simple svelte apps: https://github.com/sveltejs/template#svelte-app
 
 1. run cmd.exe and `cd mainrepo` directory, or open VS Code and open the `mainrepo` folder and `Ctrl-~` to get to the command prompt Terminal
-1. install node (including npm) `https://nodejs.org/en/download/`
-1. `npm create vite@latest src-svelte -- --template svelte`
-1. This should create the `src-svelte` directory inside mainrepo
-1. `cd src-svelte`
+1. create a directory to hold each svelte app inside a general `svelteapps` directory
+1. `cd svelteapps`
+1. `npx degit sveltejs/template nnameofnewsvelteapp`
+1. This should create the `nameofnewsvelteapp` directory inside `mainrepo/svelteapps`
+1. `cd nameofnewsvelteapp`
 1. `npm i` creates a `node_modules` folder and installs all the dependencies in there (dependecies are defined in the `package.json` and `package-lock.json`)
-1. Relevant folders like `node_modules` should already be .gitignore so ignore the same files if using another SCM before committing any changes
-1. `npm run dev` to run dev mode, and visit the localhost:XXXX site which the terminal provides. It should show a default example Svelte/Vite app
-1. In dev mode you can edit the top level svelte file `mainrepo/src-svelte/src/App.svelte` and the localhost will hot-reload to show the changes immediately
+1. Development dirs like `node_modules` should already be .gitignore so ignore the same files if using another SCM before committing any changes
+1. `npm run dev` to run dev mode, and visit the `http://localhost:XXXX` site which the terminal provides. It should show a default example Svelte app running independent of the example webserver for the mainrepo at `http://127.0.0.1:12345`
+1. In dev mode you can now edit the top level svelte file `mainrepo/svelteapps/nameofnewsvelteapp/src/App.svelte` and the localhost page will hot-reload to show the changes immediately
 1. mainrepo now looks like this...
 
 ```js
@@ -41,27 +53,27 @@ Follow instructions here: `https://svelte.dev/` to install svelte and vite in a 
    |_ www/
    |  |_ index.html
    |  |_ assets/
-   |     |_ images/
    |     ...
    |  |_ otherpages.html
    |  ...
    |_ src/
 */
-   |_ src-svelte/
-      |_ .vscode
-      |_ node_modules/
-      |_ public/
-      |_ src/
-         |_ App.svelte
-         |_ main.js
-         ...
-      |_ .gitignore
-      |_ index.html
-      |_ jsconfig.json
-      |_ package-lock.json
-      |_ package.json
-      |_ README.md
-      |_ vite.config.js
+   |_ svelteapps/
+      |_ nameofnewsvelteapp
+         |_ .vscode
+         |_ node_modules/
+         |_ public/
+         |_ src/
+            |_ App.svelte
+            |_ main.js
+            ...
+         |_ .gitignore
+         |_ index.html
+         |_ jsconfig.json
+         |_ package-lock.json
+         |_ package.json
+         |_ README.md
+         |_ vite.config.js
 ```
 
 ## Step 3 - default: embed the demo svelte app on page load into an 'app' div in your main app
